@@ -29,23 +29,25 @@ routerAdd("POST", "/myApi/ntfydemo", (e) => {
 
 ### Constructor
 
-- `new Ntfy(url)` - Creates a new notification builder with the ntfy server URL
+- `new Ntfy(url)` - Creates a new notification builder with the ntfy server URL and topic
 
 ### Core Methods
 
 - `.message(title, body)` - Sets the notification title and message body
 - `.send()` - Sends the notification with all configured settings
 - `.reset()` - Returns a new Ntfy instance with the same URL (fresh state)
+- `.topic(newTopic)` - Set the topic to the newTopic
 
 ### Configuration Methods
 
 - `.priority(level)` - Sets priority level (1=min, 3=default, 5=max)
 - `.tags(tagArray)` - Adds tags to the notification (appends to existing tags)
-- `.setTags(tagArray)` - Replaces all existing tags with new ones
-- `.click(url)` - Adds a click action (shorthand for actionView)
+- `.setTags(tagArray)` - Replaces all existing tags with these tags
+
 
 ### Action Methods
 
+- `.click(url)` - Adds a click action for when you click the message
 - `.actionView(label, url, clear?)` - Adds a view action button
 - `.actionHTTP(label, url, clear?, otherParams?)` - Adds an HTTP action button
 
